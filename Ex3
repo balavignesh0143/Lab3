@@ -1,0 +1,50 @@
+package lab3;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Exercise3 {
+	int[] getSorted(int a[])
+	{
+		int i=0,j=0;
+		int length=a.length;
+		int b[]=new int[length];
+		for(i=length-1;i>=0;i--)
+		{
+			for(j=0;j<length;j++)
+			{
+				b[j]=a[i];
+				i--;
+			}
+		}
+		System.out.println("Reversing Number:");
+		for(i=0;i<b.length;i++)
+		{
+			System.out.println(b[i]);
+		}
+		Arrays.sort(b);
+		return b;
+	}
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int i=0;
+		System.out.println("Enter the length of an array:");
+		int n=sc.nextInt();
+		int arr[]=new int[n];
+		System.out.println("Enter the element:");
+		for(i=0;i<arr.length;i++)
+		{
+			int num=sc.nextInt();
+			arr[i]=num;
+		}
+		Exercise3 re=new Exercise3();
+		arr=re.getSorted(arr);
+		System.out.println("Sorting Number:");
+		for(i=0;i<arr.length;i++)
+		{
+			System.out.println(arr[i]);
+		}
+		sc.close();
+	}
+
+}
